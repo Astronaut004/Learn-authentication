@@ -33,6 +33,13 @@ const sendWhatsAppMessage = async (to, body) => {
   }
 };
 
+app.get('/', (req, res) => {
+  res.send('✅ Hello from Railway!');
+});
+
+
+
+
 // ✅ API endpoint Oracle APEX will call
 app.post('/send-message', async (req, res) => {
   const { number } = req.body;
