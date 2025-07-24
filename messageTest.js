@@ -4,8 +4,8 @@ const app = express();
 
 app.use(express.json());
 
-const accountSid = 'ACdcabcdcd82bae50f748bb795668a71e6';
-const authToken = '25264a629d2a998d9f9e524ae65a0f92';
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const from = 'whatsapp:+14155238886'; // Twilio sandbox number
 
 const sendWhatsAppMessage = async (to, body) => {
