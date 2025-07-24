@@ -3,7 +3,7 @@ const axios = require('axios');
 const app = express();
 
 app.use(express.json());
-
+require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const from = 'whatsapp:+14155238886'; // Twilio sandbox number
