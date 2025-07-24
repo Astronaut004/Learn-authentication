@@ -4,15 +4,15 @@ const app = express();
 
 app.use(express.json());
 
-const accountSid = 'ACdcabcdcd82bae50f748bb795668a71e6';
-const authToken = '25264a629d2a998d9f9e524ae65a0f92';
+const accountSid = 'AC9a0eb9cd2ab1371bb40bda48d3e84302';
+const authToken = ' 07d2707498c5927773055d05bb3d057d';
 const from = 'whatsapp:+14155238886'; // Twilio sandbox number
 
 const sendWhatsAppMessage = async (to, body) => {
   try {
     const response = await axios.post(
       `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
-      new URLSearchParams({ To: `whatsapp:${to}`, From: from, Body: body }),
+      new URLSearchParams({ To: `whatsapp:+${to}`, From: from, Body: body }),
       {
         auth: { username: accountSid, password: authToken },
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -38,7 +38,7 @@ app.post('/send-message', async (req, res) => {
   res.json(result);
 });
 
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
