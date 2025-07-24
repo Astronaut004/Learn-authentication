@@ -12,7 +12,7 @@ const sendWhatsAppMessage = async (to, body) => {
   try {
     const response = await axios.post(
       `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
-      new URLSearchParams({ To: `whatsapp:${to}`, From: from, Body: body }),
+      new URLSearchParams({ To: `whatsapp:+${to}`, From: from, Body: body }),
       {
         auth: { username: accountSid, password: authToken },
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
